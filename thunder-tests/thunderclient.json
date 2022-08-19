@@ -56,13 +56,23 @@
     "colId": "5d0df338-986e-40ac-9217-c69a6a5023f6",
     "containerId": "",
     "name": "localhost:3001/matches",
-    "url": "localhost:3001/matches",
-    "method": "GET",
+    "url": "localhost:3001/matches/48",
+    "method": "PATCH",
     "sortNum": 70000,
     "created": "2022-08-19T16:24:04.922Z",
-    "modified": "2022-08-19T16:24:16.686Z",
-    "headers": [],
+    "modified": "2022-08-19T23:29:44.917Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYwOTUxMDgxfQ.mW7cAql44GFgrJs8WVrVxYHJpGswN4ryFlkuX7fX0sA"
+      }
+    ],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\r\n  \"homeTeamGoals\": 20,\r\n  \"awayTeamGoals\": 30\r\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
