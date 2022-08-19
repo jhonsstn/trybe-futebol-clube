@@ -5,8 +5,8 @@ import ITeamService from './interfaces/team.interface';
 
 class TeamService implements ITeamService {
   constructor(private teamRepository: ITeamRepository) {}
-  findAll = async (): Promise<ITeam[]> => {
-    const teams = await this.teamRepository.findAll();
+  getAll = async (): Promise<ITeam[]> => {
+    const teams = await this.teamRepository.getAll();
     return teams;
   };
 

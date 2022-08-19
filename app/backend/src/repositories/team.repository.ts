@@ -3,7 +3,7 @@ import ITeamRepository from './interfaces/team-repository.interface';
 import ITeam from './interfaces/team.interface';
 
 class SequelizeTeamRepository implements ITeamRepository {
-  findAll = async (): Promise<ITeam[]> => {
+  getAll = async (): Promise<ITeam[]> => {
     const teams = await Team.findAll();
     return teams;
   };

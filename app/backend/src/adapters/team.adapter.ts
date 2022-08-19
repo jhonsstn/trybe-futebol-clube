@@ -6,7 +6,7 @@ const adaptTeam = (controller: TeamController) => async (req: Request, res: Resp
     const team = await controller.findById(req.params.id);
     res.status(200).json(team);
   } else {
-    const teams = await controller.findAll();
+    const teams = await controller.getAll();
     res.status(200).json(teams);
   }
 };

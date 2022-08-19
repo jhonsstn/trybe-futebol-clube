@@ -4,8 +4,8 @@ import ITeamController from './interfaces/team.interface';
 
 class TeamController implements ITeamController {
   constructor(private teamService: ITeamService) {}
-  findAll = async (): Promise<ITeam[]> => {
-    const teams = await this.teamService.findAll();
+  getAll = async (): Promise<ITeam[]> => {
+    const teams = await this.teamService.getAll();
     return teams;
   };
 
