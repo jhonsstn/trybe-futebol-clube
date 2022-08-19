@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import * as jwt from 'jsonwebtoken';
+import UnauthorizedError from '../errors/unauthorized.error';
 import IAuthenticator, { TokenData } from './interfaces/authenticator.interface';
 
 const secret = process.env.JWT_SECRET;
@@ -15,7 +16,7 @@ class Authenticator implements IAuthenticator {
       const data = jwt.verify(token, secret as string);
       return data as TokenData;
     } catch (_error) {
-      throw new Error('Invalid token');
+      throw new UnauthorizedError('Token must be a valid token');
     }
   };
 }
