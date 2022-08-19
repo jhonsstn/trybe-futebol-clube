@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import LoginController from '../../controllers/login.controller';
-import Authenticator from '../../services/authentication.service';
+import LoginController from '../controllers/login.controller';
+import Authenticator from '../services/authentication.service';
 
 const adaptLogin = (controller: LoginController) => async (req: Request, res: Response) => {
   if (req.originalUrl.includes('validate')) {
