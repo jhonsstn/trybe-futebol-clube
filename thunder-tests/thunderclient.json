@@ -1,0 +1,40 @@
+[
+  {
+    "_id": "dd656963-b467-4433-84ec-a72305cd8380",
+    "colId": "5d0df338-986e-40ac-9217-c69a6a5023f6",
+    "containerId": "",
+    "name": "localhost:3001/login",
+    "url": "localhost:3001/login",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-08-18T18:39:51.873Z",
+    "modified": "2022-08-18T19:36:49.011Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"admin@admin.com\",\n  \"password\": \"secret_admin\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "7714294c-49fe-40fb-94b3-752fee8c4ffc",
+    "colId": "5d0df338-986e-40ac-9217-c69a6a5023f6",
+    "containerId": "",
+    "name": "localhost:3001/login/validate",
+    "url": "localhost:3001/login/validate",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-08-18T19:36:44.160Z",
+    "modified": "2022-08-18T21:24:00.455Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYwODUxNDA5fQ.zBd3NrLImJh_KdaJo0mqnGbJgpaTyPusv4hmzBQRuzk"
+      }
+    ],
+    "params": [],
+    "tests": []
+  }
+]
