@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import adaptLogin from '../../adapters/login.adapter';
-import makeLogin from './login.factory';
+import adaptLogin from '../adapters/login.adapter';
+import makeLogin from '../factories/login.factory';
 
 const route = Router();
 
