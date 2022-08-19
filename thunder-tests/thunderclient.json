@@ -36,5 +36,19 @@
     ],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "32a7a9bb-f0ac-4dea-8b88-5f101145b78c",
+    "colId": "5d0df338-986e-40ac-9217-c69a6a5023f6",
+    "containerId": "",
+    "name": "localhost:3001/teams",
+    "url": "localhost:3001/teams/10",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-08-19T01:31:26.149Z",
+    "modified": "2022-08-19T01:43:53.768Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
