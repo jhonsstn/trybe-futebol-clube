@@ -56,11 +56,11 @@
     "colId": "5d0df338-986e-40ac-9217-c69a6a5023f6",
     "containerId": "",
     "name": "localhost:3001/matches",
-    "url": "localhost:3001/matches/48",
+    "url": "localhost:3001/matches/49",
     "method": "PATCH",
     "sortNum": 70000,
     "created": "2022-08-19T16:24:04.922Z",
-    "modified": "2022-08-19T23:29:44.917Z",
+    "modified": "2022-08-20T17:14:08.379Z",
     "headers": [
       {
         "name": "Authorization",
@@ -70,9 +70,23 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\r\n  \"homeTeamGoals\": 20,\r\n  \"awayTeamGoals\": 30\r\n}",
+      "raw": "{\n  \"homeTeamGoals\": 13,\n  \"awayTeamGoals\": 10\n}\n\n\n\n",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "19189838-82eb-44a0-b660-9949ae116f44",
+    "colId": "5d0df338-986e-40ac-9217-c69a6a5023f6",
+    "containerId": "",
+    "name": "localhost:3001/leaderboard/home",
+    "url": "localhost:3001/leaderboard/away",
+    "method": "GET",
+    "sortNum": 80000,
+    "created": "2022-08-20T02:18:18.196Z",
+    "modified": "2022-08-20T18:03:02.306Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]
