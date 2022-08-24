@@ -1,5 +1,6 @@
 import ITeamRepository from '../repositories/interfaces/team-repository.interface';
 import { getAwayEfficiency, getHomeEfficiency, getTotalEfficiency } from './helper/efficiency';
+import sortTeamData from './helper/sort';
 import {
   getAwayGameResults,
   getHomeGameResults,
@@ -15,7 +16,7 @@ class LeaderboardService implements ILeaderboardService {
   constructor(private teamRepo: ITeamRepository) {}
   getTeamData = async (): Promise<ITeamData[]> => {
     const teamsData = await this.teamRepo.getTeamData();
-    const mapTeams = teamsData.map((teamData) => ({
+    const teams = teamsData.map((teamData) => ({
       name: teamData.teamName,
       totalPoints: getTotalPoints(teamData),
       totalGames: getTotalGames(teamData),
@@ -26,17 +27,14 @@ class LeaderboardService implements ILeaderboardService {
       goalsOwn: getTotalGoals(teamData)[1],
       goalsBalance: getTotalGoals(teamData)[2],
       efficiency: getTotalEfficiency(teamData).toFixed(2),
-    }))
-      .sort((a, b) => b.goalsOwn + a.goalsOwn)
-      .sort((a, b) => b.goalsFavor - a.goalsFavor)
-      .sort((a, b) => b.goalsBalance - a.goalsBalance)
-      .sort((a, b) => b.totalPoints - a.totalPoints);
-    return mapTeams;
+    }));
+    const sortedTeamsData = sortTeamData(teams);
+    return sortedTeamsData;
   };
 
   getHomeTeamData = async (): Promise<ITeamData[]> => {
     const teamsData = await this.teamRepo.getTeamData();
-    const mapTeams = teamsData.map((teamData) => ({
+    const teams = teamsData.map((teamData) => ({
       name: teamData.teamName,
       totalPoints: getHomePoints(teamData.homeMatches),
       totalGames: getHomeGames(teamData.homeMatches),
@@ -47,18 +45,14 @@ class LeaderboardService implements ILeaderboardService {
       goalsOwn: getHomeGoals(teamData.homeMatches)[1],
       goalsBalance: getHomeGoals(teamData.homeMatches)[2],
       efficiency: getHomeEfficiency(teamData.homeMatches).toFixed(2),
-    }))
-      .sort((a, b) => b.goalsOwn + a.goalsOwn)
-      .sort((a, b) => b.goalsFavor - a.goalsFavor)
-      .sort((a, b) => b.goalsBalance - a.goalsBalance)
-      .sort((a, b) => +b.totalPoints - +a.totalPoints);
-
-    return mapTeams;
+    }));
+    const sortedTeamsData = sortTeamData(teams);
+    return sortedTeamsData;
   };
 
   getAwayTeamData = async (): Promise<ITeamData[]> => {
     const teamsData = await this.teamRepo.getTeamData();
-    const mapTeams = teamsData.map((teamData) => ({
+    const teams = teamsData.map((teamData) => ({
       name: teamData.teamName,
       totalPoints: getAwayPoints(teamData.awayMatches),
       totalGames: getAwayGames(teamData.awayMatches),
@@ -69,12 +63,9 @@ class LeaderboardService implements ILeaderboardService {
       goalsOwn: getAwayGoals(teamData.awayMatches)[1],
       goalsBalance: getAwayGoals(teamData.awayMatches)[2],
       efficiency: getAwayEfficiency(teamData.awayMatches).toFixed(2),
-    }))
-      .sort((a, b) => b.goalsOwn + a.goalsOwn)
-      .sort((a, b) => b.goalsFavor - a.goalsFavor)
-      .sort((a, b) => b.goalsBalance - a.goalsBalance)
-      .sort((a, b) => +b.totalPoints - +a.totalPoints);
-    return mapTeams;
+    }));
+    const sortedTeamsData = sortTeamData(teams);
+    return sortedTeamsData;
   };
 }
 
