@@ -1,4 +1,4 @@
-import NotFoundError from '../errors/not-found.error';
+import { NotFoundError } from '../errors';
 import ITeamRepository from '../repositories/interfaces/team-repository.interface';
 import ITeam from '../repositories/interfaces/team.interface';
 import ITeamService from './interfaces/team.interface';

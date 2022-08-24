@@ -1,5 +1,4 @@
-import BadRequestError from '../errors/bad-request.error';
-import UnauthorizedError from '../errors/unauthorized.error';
+import { BadRequestError, UnauthorizedError } from '../errors';
 import IUserRepository from '../repositories/interfaces/user-repository.interface';
 import IAuthenticator from './interfaces/authenticator.interface';
 import IEncrypter from './interfaces/encrypter.interface';

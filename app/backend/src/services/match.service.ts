@@ -1,5 +1,4 @@
-import NotFoundError from '../errors/not-found.error';
-import UnauthorizedError from '../errors/unauthorized.error';
+import { NotFoundError, UnauthorizedError } from '../errors';
 import IMatchRepository from '../repositories/interfaces/match-repository.interface';
 import IMatch from '../repositories/interfaces/match.interface';
 import IScoreboard from '../repositories/interfaces/scoreboard.interface';

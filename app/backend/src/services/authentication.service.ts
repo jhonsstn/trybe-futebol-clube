@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import * as jwt from 'jsonwebtoken';
-import UnauthorizedError from '../errors/unauthorized.error';
+import { UnauthorizedError } from '../errors';
 import IAuthenticator, { TokenData } from './interfaces/authenticator.interface';
 
 const secret = process.env.JWT_SECRET;
