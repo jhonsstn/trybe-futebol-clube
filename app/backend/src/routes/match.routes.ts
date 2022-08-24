@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import adaptMatch from '../adapters/match.adapter';
+import { adaptMatch } from '../adapters';
 import makeMatch from '../factories/match.factory';
 
 const route = Router();

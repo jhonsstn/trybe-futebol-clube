@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import adaptTeam from '../adapters/team.adapter';
+import { adaptTeam } from '../adapters';
 import makeTeam from '../factories/team.factory';
 
 const route = Router();

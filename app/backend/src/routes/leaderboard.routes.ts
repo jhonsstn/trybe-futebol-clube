@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import adaptLeaderboard from '../adapters/leaderboard.adapter';
+import { adaptLeaderboard } from '../adapters';
 import makeLeaderboard from '../factories/leaderboard.factory';
 
 const route = Router();
