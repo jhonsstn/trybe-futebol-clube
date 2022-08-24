@@ -17,11 +17,7 @@ class LoginService implements ILoginService {
       throw new BadRequestError('All fields must be filled');
     }
     const user = await this.userRepository.findOne(email);
-    if (!user) {
-      throw new UnauthorizedError('Incorrect email or password');
-    }
-    const isPasswordValid = await this.encrypter.compare(password, user.password);
-    if (!isPasswordValid) {
+    if (!user || !(await this.encrypter.compare(password, user.password))) {
       throw new UnauthorizedError('Incorrect email or password');
     }
     const { id, role } = user;
