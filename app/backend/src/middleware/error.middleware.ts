@@ -5,7 +5,6 @@ interface IError extends Error {
 }
 
 const errorMiddleware = (err: IError, _req: Request, res: Response, _next: NextFunction) => {
-  console.error(err.stack);
   res.status(err.statusCode || 500).json({ message: err.message });
 };
 
