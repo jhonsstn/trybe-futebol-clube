@@ -73,7 +73,7 @@ describe('Match route', () => {
   })
 
   it('should throw an error if user try to add a match with an invalid token', async () => {
-    sinon.stub(jwt, "verify").rejects()
+    sinon.stub(jwt, "verify").resolves(new Error())
 
     const chaiHttpResponse: Response = await chai
       .request(app)
@@ -99,6 +99,7 @@ describe('Match route', () => {
   })
 
   it("should throw an error if user try to add a match with a team that doesn't exists", async () => {
+    sinon.stub(jwt, "verify").resolves()
     sinon.stub(Team, "findByPk").resolves(null)
 
     const chaiHttpResponse: Response = await chai
@@ -127,6 +128,7 @@ describe('Match route', () => {
   })
 
   it("should add a match", async () => {
+    sinon.stub(jwt, "verify").resolves()
     sinon.stub(Match, "create").resolves(createdMatch as unknown as Match)
 
     const chaiHttpResponse: Response = await chai
