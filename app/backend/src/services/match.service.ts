@@ -27,7 +27,7 @@ class MatchService implements IMatchService {
   };
 
   addNewMatch = async (match: Omit<IMatch, 'id'>, token: string): Promise<IMatch> => {
-    this.authenticator.decode(token);
+    await this.authenticator.decode(token);
     if (match.homeTeam === match.awayTeam) {
       throw new UnauthorizedError('It is not possible to create a match with two equal teams');
     }
@@ -36,7 +36,6 @@ class MatchService implements IMatchService {
       if (!team) throw new NotFoundError('There is no team with such id!');
     }));
     const newMatch = await this.matchRepository.addNewMatch({ ...match, inProgress: 1 });
-    // const plainNewMatch = newMatch.toJSON() as IMatch;
     return { ...newMatch, inProgress: true };
   };
 
