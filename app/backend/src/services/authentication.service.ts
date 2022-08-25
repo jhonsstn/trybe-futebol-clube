@@ -11,7 +11,7 @@ class Authenticator implements IAuthenticator {
     return token;
   };
 
-  decode = (token: string): TokenData => {
+  decode = async (token: string): Promise<TokenData> => {
     try {
       const data = jwt.verify(token, secret as string);
       return data as TokenData;

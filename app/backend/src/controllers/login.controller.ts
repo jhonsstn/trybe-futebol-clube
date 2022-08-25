@@ -8,6 +8,11 @@ class LoginController implements ILoginController {
     const token = await this.loginService.login(email, password);
     return token;
   };
+
+  validate = async (token: string): Promise<string> => {
+    const role = await this.loginService.validate(token);
+    return role;
+  };
 }
 
 export default LoginController;

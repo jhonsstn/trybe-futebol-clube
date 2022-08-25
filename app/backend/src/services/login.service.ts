@@ -23,6 +23,11 @@ class LoginService implements ILoginService {
     const token = this.authenticator.encode({ id, role });
     return token;
   };
+
+  validate = async (token: string): Promise<string> => {
+    const { role } = await this.authenticator.decode(token);
+    return role;
+  };
 }
 
 export default LoginService;
