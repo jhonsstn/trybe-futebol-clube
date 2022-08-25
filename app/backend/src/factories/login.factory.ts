@@ -6,7 +6,7 @@ import LoginService from '../services/login.service';
 
 const makeLogin = () => {
   const userRepo = new SequelizeUserRepository();
-  const encrypter = new Encrypter(10);
+  const encrypter = new Encrypter();
   const authenticator = new Authenticator();
   const loginService = new LoginService(userRepo, authenticator, encrypter);
   return new LoginController(loginService);
