@@ -19,9 +19,7 @@ class MatchService implements IMatchService {
   };
 
   getByProgress = async (inProgress: string): Promise<IMatch[]> => {
-    const inProgressNumber: number = inProgress === 'true' ? 1 : 0;
-    const matches = await this.matchRepository.getByProgress(inProgressNumber);
-
+    const matches = await this.matchRepository.getByProgress(inProgress === 'true' ? 1 : 0);
     return matches.map((match) => ({
       ...match,
       inProgress: inProgress === 'true',
@@ -38,8 +36,8 @@ class MatchService implements IMatchService {
       if (!team) throw new NotFoundError('There is no team with such id!');
     }));
     const newMatch = await this.matchRepository.addNewMatch({ ...match, inProgress: 1 });
-    const plainNewMatch = newMatch.toJSON() as IMatch;
-    return { ...plainNewMatch, inProgress: true };
+    // const plainNewMatch = newMatch.toJSON() as IMatch;
+    return { ...newMatch, inProgress: true };
   };
 
   finishMatch = async (id: string): Promise<void> => {

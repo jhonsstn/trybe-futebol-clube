@@ -40,7 +40,7 @@ class SequelizeMatchRepository implements IMatchRepository {
 
   addNewMatch = async (match: Omit<IMatch, 'id'>): Promise<IMatch> => {
     const newMatch = await Match.create(match);
-    return newMatch;
+    return newMatch.toJSON() as IMatch;
   };
 
   finishMatch = async (id: string): Promise<void> => {
