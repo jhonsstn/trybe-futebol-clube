@@ -1435,3 +1435,39 @@ export const finishedMatches = [
     }
   }
 ]
+
+export const createdMatch = {
+  dataValues: {
+    id: 1,
+    homeTeam: 1,
+    awayTeam: 2,
+    homeTeamGoals: 1,
+    awayTeamGoals: 1,
+    inProgress: 1
+  },
+  _previousDataValues: {
+    homeTeam: 1,
+    awayTeam: 2,
+    homeTeamGoals: 1,
+    awayTeamGoals: 1,
+    inProgress: 1,
+    id: 1
+  },
+  _changed: {},
+  _options: {
+    isNewRecord: true,
+    _schema: null,
+    _schemaDelimiter: ""
+  },
+  "isNewRecord": false,
+  toJSON: () => {
+    return {
+    id: 1,
+    homeTeam: 1,
+    awayTeam: 2,
+    homeTeamGoals: 1,
+    awayTeamGoals: 1,
+    inProgress: 1
+    }
+  }
+}
