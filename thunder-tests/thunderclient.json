@@ -80,11 +80,11 @@
     "colId": "5d0df338-986e-40ac-9217-c69a6a5023f6",
     "containerId": "",
     "name": "localhost:3001/leaderboard/home",
-    "url": "localhost:3001/leaderboard/away",
+    "url": "localhost:3001/leaderboard",
     "method": "GET",
     "sortNum": 80000,
     "created": "2022-08-20T02:18:18.196Z",
-    "modified": "2022-08-20T18:03:02.306Z",
+    "modified": "2022-08-25T17:50:32.613Z",
     "headers": [],
     "params": [],
     "tests": []
